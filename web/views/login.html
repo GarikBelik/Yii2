@@ -1,0 +1,27 @@
+<div class="site-login">
+    <h1>Вход</h1>
+    <form ng-submit="login()" name="loginForm" id="login-form" class="form-horizontal" method="post" role="form">
+        <input type="hidden" name="_csrf" value="GGroRX3bVOn9fhUaAYw88Rv8tRyXePxi3rEkJ1KEiltQJoc8D70xpZZTYXdby0q0cM3YKMQ9uBWmhG9yYs25LA==">
+        <div ng-class="{ 'has-success': !error['phone'] && submitted,
+            'has-error': error['phone'] && submitted }" class="form-group field-loginform-phone required">
+            <label class="col-lg-1 control-label" for="loginform-phone">Телефон</label>
+            <div class="col-lg-3">
+                   <input ng-model="userModel.phone" type="text" id="loginform-phone" class="form-control" name="LoginForm[phone]" autofocus="" aria-required="true">
+            </div>
+            <div class="col-lg-8"><p class="help-block help-block-error " ng-if="error['phone']">{{ error['phone'] }}</p></div>
+        </div>
+        <div ng-class="{ 'has-success': !error['password'] && submitted,
+            'has-error': error['password'] && submitted }" class="form-group field-loginform-password required">
+            <label class="col-lg-1 control-label" for="loginform-password">Пароль</label>
+            <div class="col-lg-3">
+                <input ng-model="userModel.password" type="password" id="loginform-password" class="form-control" name="LoginForm[password]" value="" aria-required="true">
+            </div>
+            <div class="col-lg-8"><p class="help-block help-block-error " ng-if="error['password']">{{ error['password'] }}</p></div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-offset-1 col-lg-11">
+                <button type="submit" class="btn btn-primary" name="login-button">Вход</button>
+            </div>
+        </div>
+    </form>
+</div>        
